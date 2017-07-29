@@ -1,0 +1,18 @@
+version: "3"
+
+services:
+  web:
+    build: .
+    volumes:
+      - /var/www/cezerin-service:/var/www/cezerin-service
+    depends_on:
+      - db
+    links:
+      - db
+    ports:
+      - 4000:4000
+
+  db:
+    image: "mongo:latest"
+    volumes:
+      - /var/www/cezerin-service-db:/data/db

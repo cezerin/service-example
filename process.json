@@ -1,0 +1,12 @@
+{
+  "apps": [{
+    "name": "service",
+    "script": "./index.js",
+    "watch": ["./index.js", "./server/"],
+    "instances": "1",
+    "exec_mode": "fork",
+    "env": {
+      "NODE_ENV": "production"
+    }
+  }]
+}
